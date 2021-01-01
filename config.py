@@ -35,11 +35,10 @@ elif ENV == "staging":
     RESULT_BACKEND = 'mongodb://admin:admin@localhost:27017/task_meta_dev'
     logger = setup_logger('APP_NAME', './data/logs/staging/{}'.format(log_file_name))
 
-elif ENV == "dev":
+elif ENV == "development":
     MONGO_JOB_COLLECTION = "jobs"
-    MONGO_JOB_DB = "task_meta_dev"
-    CELERY_BROKER_URL = 'redis://localhost:6379/2'
+    MONGO_JOB_DB = "task_meta_"
+    CELERY_BROKER_URL = 'redis://:3asamXvHaS5NpMA@redis-13547.c44.us-east-1-2.ec2.cloud.redislabs.com:13547'
     CELERY_QUEUE_NAME = "jobqueue"
-    RESULT_BACKEND = 'mongodb://admin:admin@localhost:27017/task_meta_dev'
-    logger = setup_logger('APP_NAME', './data/logs/dev/{}'.format(log_file_name))
-
+    RESULT_BACKEND = 'mongodb+srv://admin:k58uqRIRYEuY78v@personal-cluster.cuysl.mongodb.net/admin?retryWrites=true&w=majority'
+    logger = setup_logger('APP_NAME', './data/logs/development/{}'.format(log_file_name))
